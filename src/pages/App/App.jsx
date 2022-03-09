@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import AuthPage from '../AuthPage/AuthPage';
-import NewOrderPage from '../NewOrderPage/NewOrderPage';
-import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import NavBar from '../../components/NavBar/NavBar';
+import AuthPage from '../AuthPage/AuthPage';
+import EventBoard from '../EventBoard/EventBoard';
+import ProfileDetail from '../ProfileDetail/ProfileDetail';
+import FlyyrDetail from '../FlyyrDetail/FlyyrDetail';
 import { getUser } from '../../utilities/users-service';
 
 export default function App() {
@@ -17,8 +18,9 @@ export default function App() {
             <NavBar user={user} setUser={setUser} />
             <Routes>
               {/* Route components in here */}
-              <Route path="/orders/new" element={<NewOrderPage />} />
-              <Route path="/orders" element={<OrderHistoryPage />} />
+              <Route path="/" element={<EventBoard />} />
+              <Route path="/profile/:id" element={<ProfileDetail />} />
+              <Route path="/:id" element={<FlyyrDetail />} />
             </Routes>
           </>
           :
