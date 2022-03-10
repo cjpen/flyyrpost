@@ -21,6 +21,7 @@ app.use(require('./config/checkToken'));
 
 // API routes here
 app.use('/api/users', require('./routes/api/users'));
+app.use('/api/flyyrs', require('./routes/api/flyyrs'));
 
 // "Catch all" route
 app.get('/*', function(req, res) {

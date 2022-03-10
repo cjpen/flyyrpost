@@ -19,7 +19,7 @@ export default function App() {
             <Routes>
               {/* Route components in here */}
               <Route path="/" element={<EventBoard />} />
-              <Route path="/profile/:id" element={<ProfileDetail />} />
+              <Route path="/profile" element={<ProfileDetail />} />
               <Route path="/:id" element={<FlyyrDetail />} />
             </Routes>
           </>

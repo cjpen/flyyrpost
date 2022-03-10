@@ -5,6 +5,7 @@ export async function signUp(userData) {
   // users-api.js module which will ultimately
   // return the JWT
   const token = await usersAPI.signUp(userData);
+  console.log(token);
   // Persist the token to localStorage
   localStorage.setItem('token', token);
   return getUser();
