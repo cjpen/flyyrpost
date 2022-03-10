@@ -3,9 +3,10 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import NavBar from '../../components/NavBar/NavBar';
 import AuthPage from '../AuthPage/AuthPage';
-import EventBoard from '../EventBoard/EventBoard';
-import ProfileDetail from '../ProfileDetail/ProfileDetail';
-import FlyyrDetail from '../FlyyrDetail/FlyyrDetail';
+import EventBoardPage from '../EventBoardPage/EventBoardPage';
+import ProfileDetailPage from '../ProfileDetailPage/ProfileDetailPage';
+import PostFlyyrPage from '../PostFlyyrPage/PostFlyyrPage';
+import FlyyrDetailPage from '../FlyyrDetailPage/FlyyrDetailPage';
 import { getUser } from '../../utilities/users-service';
 
 export default function App() {
@@ -18,9 +19,10 @@ export default function App() {
             <NavBar user={user} setUser={setUser} />
             <Routes>
               {/* Route components in here */}
-              <Route path="/" element={<EventBoard />} />
-              <Route path="/profile" element={<ProfileDetail />} />
-              <Route path="/:id" element={<FlyyrDetail />} />
+              <Route path="/" element={<EventBoardPage />} />
+              <Route path="/flyyr/new" element={<PostFlyyrPage />} />
+              <Route path="/profile" element={<ProfileDetailPage />} />
+              <Route path="/:id" element={<FlyyrDetailPage />} />
             </Routes>
           </>
           :
