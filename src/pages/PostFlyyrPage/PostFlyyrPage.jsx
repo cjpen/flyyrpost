@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { postFlyyr } from '../../utilities/flyyrs-api';
 
 export default function PostFlyyrPage() {
     const [ formData, setFormData]  = useState({
@@ -14,6 +16,7 @@ export default function PostFlyyrPage() {
         eventDetails: '',
         ticketingLink: '',
     });
+    const navigate = useNavigate();
 
     function handleChange(evt) {
         setFormData({ ...formData, [evt.target.name]: evt.target.value });
@@ -22,10 +25,11 @@ export default function PostFlyyrPage() {
     async function handleSubmit(evt) {
         evt.preventDefault();
         try {
-            
-            
+            const flyyr = await postFlyyr(formData);
+            console.log(flyyr);
+            navigate('/');
         } catch {
-            
+            console.log('Add Flyyr Not Successful');
         }
     }
 
@@ -36,19 +40,19 @@ export default function PostFlyyrPage() {
                 <form autoComplete="off" onSubmit={handleSubmit}>
                     <label>Upload Your Flyyr:</label>
                     <input type="url" name="flyyrImage" value={formData.flyyrImage} onChange={handleChange} />
-                    <label>Event Title:</label>
+                    <label>Event Title (required):</label>
                     <input type="text" name="eventTitle" value={formData.eventTitle} onChange={handleChange} required/>
                     <label>Promoter:</label>
                     <input type="text" name="promoter" value={formData.promoter} onChange={handleChange } />
                     <label>Talent (i.e. DJ's, Performers, Hosts): </label>
                     <input type="text" name="talent" value={formData.talent} onChange={handleChange} />
-                    <label>Flyyr Designer</label>
+                    <label>Flyyr Designer (required):</label>
                     <input type="text" name="designer" value={formData.designer} onChange={handleChange} required />
-                    <label>Venue:</label>
+                    <label>Venue (required):</label>
                     <input type="text" name="venue" value={formData.venue} onChange={handleChange} required />
                     <label>Address:</label>
                     <input type="text" name="address" value={formData.address} onChange={handleChange} />
-                    <label>Start Date and Time:</label>
+                    <label>Start Date and Time: (required)</label>
                     <input type="text" name="startDateTime" value={formData.startDateTime} onChange={handleChange} required />
                     <label>End Date and Time:</label>
                     <input type="text" name="endDateTime" value={formData.endDateTime} onChange={handleChange} />

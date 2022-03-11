@@ -1,10 +1,16 @@
+import { getToken } from './users-service';
+
+
 const BASE_URL = '/api/flyyrs';
 
-// export function signUp(userData) {
-//   return sendRequest(BASE_URL, 'POST', userData);
-// }
+export function getAll(){
+  return sendRequest(BASE_URL)
+}
 
-
+export function postFlyyr(formData) {
+  console.log(formData)
+  return sendRequest(BASE_URL, 'POST', formData);
+}
 
 /*--- Helper Functions ---*/
 
