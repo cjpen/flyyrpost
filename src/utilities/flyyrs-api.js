@@ -3,6 +3,11 @@ import { getToken } from './users-service';
 
 const BASE_URL = '/api/flyyrs';
 
+export function getOne(id){
+  console.log(id);
+  return sendRequest(`${BASE_URL}/${id}`)
+}
+
 export function getAll(){
   return sendRequest(BASE_URL)
 }

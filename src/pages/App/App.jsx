@@ -22,7 +22,7 @@ export default function App() {
               <Route path="/" element={<EventBoardPage />} />
               <Route path="/flyyr/new" element={<PostFlyyrPage />} />
               <Route path="/profile" element={<ProfileDetailPage />} />
-              <Route path="/:id" element={<FlyyrDetailPage />} />
+              <Route path="/flyyr/:id" element={<FlyyrDetailPage />} />
             </Routes>
           </>
           :

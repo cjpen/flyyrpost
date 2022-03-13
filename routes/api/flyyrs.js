@@ -8,5 +8,7 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 router.post('/', flyyrsCtrl.post);
 // Get to /api/flyyrs
 router.get('/', flyyrsCtrl.getAll);
+// get to /api/flyyrs/:id
+router.get('/:id', flyyrsCtrl.getOne);
 
 module.exports = router;

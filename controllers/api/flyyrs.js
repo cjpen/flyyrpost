@@ -2,8 +2,14 @@ const Flyyr = require('../../models/flyyr');
 
 module.exports = {
     post,
-    getAll
+    getAll,
+    getOne
 };
+
+async function getOne(req, res) {
+    const flyyr = await Flyyr.findById(req.params.id);
+    res.json(flyyr);
+}
 
 async function getAll(req, res) {
     const flyyrs = await Flyyr.find({
