@@ -3,9 +3,11 @@ import { getToken } from './users-service';
 
 const BASE_URL = '/api/flyyrs';
 
+export function deleteFlyyr(id) {
+  return sendRequest(`${BASE_URL}/${id}`, 'DELETE')
+}
 
 export function getOne(id){
-  console.log(id);
   return sendRequest(`${BASE_URL}/${id}`)
 }
 

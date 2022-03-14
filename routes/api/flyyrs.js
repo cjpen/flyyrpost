@@ -12,4 +12,5 @@ router.get('/', flyyrsCtrl.getAll);
 router.get('/:id', flyyrsCtrl.getOne);
 // POST to /api/flyyrs/:id
 router.post('/:id', flyyrsCtrl.update);
+router.delete('/:id', flyyrsCtrl.delete);
 module.exports = router;
