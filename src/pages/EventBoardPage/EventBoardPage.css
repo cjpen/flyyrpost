@@ -1,0 +1,12 @@
+.flyyr-board{
+    margin: 5vh;
+    height: 75vh;
+    overflow-y: scroll;
+
+    /* overflow-x: hidden; 
+    overflow-y: hidden; */
+}
+
+.flyyr {
+
+}

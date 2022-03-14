@@ -21,9 +21,13 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
+  background-image: url(./assets/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top , center;
   padding: 2vmin;
   height: 100vh;
+  overflow: hidden;
 }
 
 code {
@@ -79,6 +83,7 @@ code {
 }
 
 .form-container {
+  margin: 12vmin;
   padding: 3vmin;
   background-color: var(--tan-1);
   border: .1vmin solid var(--tan-3);

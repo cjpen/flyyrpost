@@ -11,6 +11,7 @@ import { getUser } from '../../utilities/users-service';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
+  const [flyyrs, setFlyyrs] = useState([])
 
   return (
     <main className="App">
@@ -19,10 +20,10 @@ export default function App() {
             <NavBar user={user} setUser={setUser} />
             <Routes>
               {/* Route components in here */}
-              <Route path="/" element={<EventBoardPage />} />
+              <Route path="/" element={<EventBoardPage flyyrs={flyyrs} setFlyyrs={setFlyyrs}/>} />
               <Route path="/flyyr/new" element={<PostFlyyrPage />} />
               <Route path="/profile" element={<ProfileDetailPage />} />
-              <Route path="/flyyr/:id" element={<FlyyrDetailPage />} />
+              <Route path="/flyyr/:id" element={<FlyyrDetailPage flyyrs={flyyrs} setFlyyrs={setFlyyrs}/>} />
             </Routes>
           </>
           :

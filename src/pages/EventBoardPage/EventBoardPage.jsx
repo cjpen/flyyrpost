@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import * as flyyrsAPI from '../../utilities/flyyrs-api';
 import './EventBoardPage.css'
 
-export default function EventBoardPage() {
-  const [flyyrs, setFlyyrs] = useState([])
+export default function EventBoardPage({flyyrs, setFlyyrs}) {
+  
 
   const flr = flyyrs.map((f, idx) => (
     <Link to={`/flyyr/${f._id}`}  key={idx}>
-      <img className="flyyr-board"  src={f.flyyrImage} alt={f.eventTitle} />
+      <img className="flyyr-img"  src={f.flyyrImage} alt={f.eventTitle} />
+      <p>{f.eventTitle}</p>
     </Link>
   ));
     // const filteredFlyyrsByDate = flyyrs.map((f, idx) => {
@@ -25,7 +26,9 @@ export default function EventBoardPage() {
   return (
     <>
       <h1>EventBoard</h1>
-       {flr}
+      <div className="flyyr-board">
+        {flr}
+      </div>
     </>
   );
 }

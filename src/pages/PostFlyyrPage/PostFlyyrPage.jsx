@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { postFlyyr } from '../../utilities/flyyrs-api';
+import { postFlyyr, updateFlyyr } from '../../utilities/flyyrs-api';
 
-export default function PostFlyyrPage() {
-    const [ formData, setFormData]  = useState({
+export default function PostFlyyrPage({flyyr}) {
+    const [ formData, setFormData]  = useState(
+        flyyr ? flyyr : 
+        {
         flyyrImage: '',
         eventTitle: '',
         promoter: '',
@@ -15,21 +17,30 @@ export default function PostFlyyrPage() {
         endDateTime: '',
         eventDetails: '',
         ticketingLink: '',
-    });
+        }
+    );
     const navigate = useNavigate();
-
+    console.log(flyyr);
     function handleChange(evt) {
         setFormData({ ...formData, [evt.target.name]: evt.target.value });
     }
 
     async function handleSubmit(evt) {
         evt.preventDefault();
-        try {
-            const flyyr = await postFlyyr(formData);
-            console.log(flyyr);
-            navigate('/');
-        } catch {
-            console.log('Add Flyyr Not Successful');
+        if (flyyr) { 
+            try {
+                const updatedFlyyr = await updateFlyyr(formData, flyyr._id);
+                navigate('/');
+            } catch {
+                console.log('Edit Flyyr Not Successful');
+            }
+        } else{
+            try {
+                const createFlyyr = await postFlyyr(formData);
+                navigate('/');
+            } catch {
+                console.log('Add Flyyr Not Successful');
+            }
         }
     }
 
