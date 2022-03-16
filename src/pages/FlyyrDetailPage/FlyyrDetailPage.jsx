@@ -26,13 +26,14 @@ export default function FlyyrDetail({flyyrs, setFlyyrs}) {
             <div className="flyyr-detail-grid">
                 <div>
                     <img className="flyyr-image" src={flyyr.flyyrImage} alt={flyyr.eventTitle} />
+                    <p>Flyyr Designed by: {flyyr.designer}</p>
                 </div>
                 <div className="flyyr-info"> 
-                    <p>Flyyr Designed by: {flyyr.designer}</p>
                     <p>{flyyr.promoter}</p>
                     <p>{flyyr.talent}</p>
                     <p>{flyyr.venue}</p>
                     <p>{flyyr.address}</p>
+                    <p>{flyyr.eventDetails}</p>
                     <p>{flyyr.startDateTime}</p>
                     <p>{flyyr.endDateTime}</p>
                     <a href={flyyr.ticketingLink} target="">{flyyr.ticketingLink}</a>
