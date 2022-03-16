@@ -14,9 +14,13 @@ export default function FlyyrDetail({flyyrs, setFlyyrs}) {
     const flyyr = flyyrs.find((f) => f._id === id);
 
     return ( <>{
-        showEdit ?
-        <PostFlyyrPage flyyr={flyyr}/> :
-        showDeleteConf ? <DeleteConfirmation flyyr={flyyr} setShowDeleteConf={setShowDeleteConf} id={id}/> :
+        showEdit ? <PostFlyyrPage flyyr={flyyr}/> :
+        showDeleteConf ? 
+            <DeleteConfirmation
+                flyyr={flyyr} 
+                setShowDeleteConf={setShowDeleteConf} 
+                id={id}
+            /> :
         <>
             <h1>{flyyr.eventTitle}</h1>
             <img className="flyyr-image" src={flyyr.flyyrImage} alt={flyyr.eventTitle} />
