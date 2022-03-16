@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import * as flyyrAPI from "../../utilities/flyyrs-api";
 import PostFlyyrPage from "../PostFlyyrPage/PostFlyyrPage";
 import DeleteConfirmation from "../../components/DeleteConfirmation/DeleteConfirmation";
@@ -16,13 +16,15 @@ export default function FlyyrDetail({flyyrs, setFlyyrs}) {
     return ( <>{
         showEdit ?
         <PostFlyyrPage flyyr={flyyr}/> :
-        showDeleteConf ? <DeleteConfirmation setShowDeleteConf={setShowDeleteConf} id={id}/> :
+        showDeleteConf ? <DeleteConfirmation flyyr={flyyr} setShowDeleteConf={setShowDeleteConf} id={id}/> :
         <>
             <h1>{flyyr.eventTitle}</h1>
             <img className="flyyr-image" src={flyyr.flyyrImage} alt={flyyr.eventTitle} />
-            <button onClick={() => setShowEdit(true)}>Edit</button>
-            <button onClick={() => setShowDeleteConf(true)}>Delete</button>
             <p></p>
+            <div>
+                <button onClick={() => setShowEdit(true)}>Edit</button>
+                <button onClick={() => setShowDeleteConf(true)}>Delete</button>
+            </div>
         </>
 
     }</>);

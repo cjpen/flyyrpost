@@ -13,14 +13,16 @@ export default function NavBar({ user, setUser }) {
   return (
     <nav>
       <Link to="/"><img className='nav-icons' src={Logo} alt='home'/></Link>
-      &nbsp; | &nbsp;
-      <Link to="/profile">profile</Link>
-      &nbsp; | &nbsp;
-      <Link to="/flyyr/new">Post Flyyr!</Link>
-      &nbsp; | &nbsp;
+      <div>
       <span>Welcome, {user.name}</span>
-      &nbsp; | &nbsp;
-      <Link onClick={handleLogOut} to="">Log Out</Link>
+      </div>
+      <div>
+        {/* <Link to="/profile">profile</Link>
+        &nbsp; | &nbsp; */}
+        <Link to="/flyyr/new">Post Flyyr!</Link>
+        &nbsp; | &nbsp;
+        <Link onClick={handleLogOut} to="">Log Out</Link>
+      </div>
     </nav>
   );
 }

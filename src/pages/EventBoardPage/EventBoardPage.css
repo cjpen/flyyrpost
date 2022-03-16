@@ -1,10 +1,19 @@
 .flyyr-board{
-    margin: 5vh;
+    padding: 0 5vh;
     height: 75vh;
     overflow-y: scroll;
-
+    display: grid; 
+    gap: 1.5rem;
+    
     /* overflow-x: hidden; 
     overflow-y: hidden; */
+}
+
+@media (min-width: 40em) {
+    .flyyr-board {
+        padding: 5vh 15vh;
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .flyyr {
