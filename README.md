@@ -6,7 +6,16 @@ FlyyrPost is inspired by the artistry of graphic design within the underground p
 
 ## Screenshots
 
+![Landing Page](https://i.imgur.com/rMDgZFk.png)
+
 ## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- Node.JS
+- Express
+- React
 
 ## Getting Started
 
@@ -15,3 +24,6 @@ FlyyrPost is inspired by the artistry of graphic design within the underground p
 
 ## Next Steps
 
+- Integrate photo upload on  Post Flyyr page
+- Allow for tagging of talent
+- FavFlyyr Feature to save upcoming events for user

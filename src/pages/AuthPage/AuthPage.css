@@ -1,6 +1,11 @@
 
 .logo {
-    position: center;
-    width: 70%;
-    
+    display: flex;
+    padding: 5vh;
+    align-items: center;
+    width: 100%;
+}
+
+h2 {
+    padding: 0 15vh;
 }
