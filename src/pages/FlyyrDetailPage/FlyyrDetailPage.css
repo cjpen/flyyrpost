@@ -1,8 +1,23 @@
-.flyyr-image {
-    max-height: 30em;
-    max-width: 10em;
+.flyyr-detail-grid {
+    display: grid;
 }
 
-button {
-    margin:;
+.flyyr-image {
+    
 }
+
+.flyyr-info {
+    
+}
+
+@media (max-width: 40em) {
+    height: 75vh;
+    overflow-y: scroll;
+}
+@media (min-width: 40em) {
+    .flyyr-detail-grid {
+        grid-template-columns: 1fr 1fr;
+        padding: 5vh 15vh;
+    }
+}
+

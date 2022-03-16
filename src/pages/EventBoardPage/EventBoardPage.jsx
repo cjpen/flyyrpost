@@ -25,7 +25,7 @@ export default function EventBoardPage({flyyrs, setFlyyrs}) {
 
   return (
     <>
-      <h1>EventBoard</h1>
+      <h1>Upcoming Events</h1>
       <div className="flyyr-board">
         {flr}
       </div>

@@ -23,15 +23,21 @@ export default function FlyyrDetail({flyyrs, setFlyyrs}) {
             /> :
         <>
             <h1>{flyyr.eventTitle}</h1>
-            <img className="flyyr-image" src={flyyr.flyyrImage} alt={flyyr.eventTitle} />
-            <p>Flyyr Designed by: {flyyr.designer}</p>
-            <p>{flyyr.promoter}</p>
-            <p>{flyyr.talent}</p>
-            <p>{flyyr.venue}</p>
-            <p>{flyyr.address}</p>
-            <p>{flyyr.startDateTime}</p>
-            <p>{flyyr.endDateTime}</p>
-            <a href={flyyr.ticketingLink} target="">{flyyr.ticketingLink}</a>
+            <div className="flyyr-detail-grid">
+                <div>
+                    <img className="flyyr-image" src={flyyr.flyyrImage} alt={flyyr.eventTitle} />
+                </div>
+                <div className="flyyr-info"> 
+                    <p>Flyyr Designed by: {flyyr.designer}</p>
+                    <p>{flyyr.promoter}</p>
+                    <p>{flyyr.talent}</p>
+                    <p>{flyyr.venue}</p>
+                    <p>{flyyr.address}</p>
+                    <p>{flyyr.startDateTime}</p>
+                    <p>{flyyr.endDateTime}</p>
+                    <a href={flyyr.ticketingLink} target="">{flyyr.ticketingLink}</a>
+                </div>
+            </div>
             <div>
                 <button onClick={() => setShowEdit(true)}>Edit</button>
                 <button onClick={() => setShowDeleteConf(true)}>Delete</button>
